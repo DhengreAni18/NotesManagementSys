@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sign Up</title>
+
+    <!-- Font Icon -->
+    <link
+      rel="stylesheet"
+      href="fonts/material-icon/css/material-design-iconic-font.min.css"
+    />
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Optional theme -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              style="margin-top: 6px; margin-left: 3px;"
+              class="btn btn-secondary btn-sm"
+              data-toggle="modal"
+              data-target="#myModal"
+            >
+              Upload
+            </button>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          Welcome User! &nbsp;
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Log Out
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <!-- Trigger the modal with a button -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+
+                <form action="">
+                    <label for="myfile">:</label>
+                    <input type="file" id="myfile" name="myfile" multiple><br><br>
+                    <input type="text" id="description" name="myfile" placeholder="Description"><br>
+                    <input type="submit" >
+                  </form>
+
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-default"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="container">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Subject Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>UserID</th>
+            <th>Uploaded By</th>
+            <th>Uploaded On</th>
+            <th>Download</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CMC</td>
+            <td>lecture 1</td>
+            <td>pptx</td>
+            <td>Jone Doe</td>
+            <td>Teacher</td>
+            <td>2020-03-16 10:32:36</td>
+            <td><a href="">Download</a></td>
+            <td><button type="button" class="btn btn-success btn-sm">Approve</button></td>
+          </tr>
+          <tr>
+            <td>NNFL</td>
+            <td>Unit 1</td>
+            <td>pdf</td>
+            <td>Mary Moe</td>
+            <td>Student</td>
+            <td>2020-03-16 11:22:16</td>
+            <td><a href="">Download</a></td>
+            <td><button type="button" class="btn btn-success btn-sm">Approve</button></td>
+          </tr>
+          <tr>
+            <td>SE</td>
+            <td>Requirement Analysis</td>
+            <td>ppt</td>
+            <td>July Dooley</td>
+            <td>Student</td>
+            <td>2020-03-16 12:32:09</td>
+            <td><a href="">Download</a></td>
+            <td><button type="button" class="btn btn-success btn-sm">Approve</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
