@@ -38,10 +38,10 @@
     ></script>
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
-      
+
     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-  
+
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
@@ -58,7 +58,9 @@
               <figure>
                 <img src="images/signin-image.jpg" alt="sing up image" />
               </figure>
-              <a href="#" class="signup-image-link">Create an account</a>
+              <a href="signup.html" class="signup-image-link"
+                >Create an account</a
+              >
             </div>
 
             <div class="signin-form">
@@ -84,7 +86,7 @@
                     placeholder="Password"
                   />
                 </div>
-                
+
                 <div class="form-group">
                   <input
                     type="checkbox"
@@ -98,7 +100,7 @@
                 </div>
                 <div class="form-group form-button">
                   <input
-                  type="button"
+                    type="button"
                     name="signin"
                     id="signin"
                     onclick="login(document.getElementById('your_name').value , document.getElementById('your_pass').value);"
