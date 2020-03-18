@@ -3,7 +3,7 @@ function login(email, password) {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(function() {
-      alert("Reset email sent.");
+      alert("Login Done!");
     })
     .catch(function(error) {
       // Handle Errors here.
