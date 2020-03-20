@@ -37,6 +37,13 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <!--firebase database-->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+    <script src="./js/firebase.js"></script>
+
     <script src="./js/student.js"></script>
     <script src="./js/upload.js"></script>
   </head>
@@ -118,22 +125,49 @@
               </button>
             </div>
             <div class="modal-body">
-              <form onsubmit="studentupload()">
+              <form class="div-container">
                 <label for="myfile">:</label>
-                <input type="file" id="myfile" name="myfile" multiple />
+                <input type="file" id="myfile" name="myfile" multiple /><br />
+                <div class="row">
+                  <div class="col-lg-6 col-sm-6 col-xs-12">
+                    <input
+                      type="text"
+                      id="subject"
+                      name="sub"
+                      placeholder="subject/ topic name"
+                      required
+                    />
+                  </div>
+                  <div class="col-lg-6 col-sm-6 col-xs-12">
+                    <input
+                      type="text"
+                      id="type"
+                      name="type"
+                      placeholder="file format"
+                      required
+                    />
+                  </div>
+                </div>
+                <br />
                 <input
                   type="text"
                   id="description"
                   name="myfile"
                   placeholder="Description"
+                  required
                 /><br />
-                <input type="submit" />
               </form>
             </div>
             <div class="modal-footer">
               <button
+                class="btn btn-default bg-success"
+                onclick="upload(document.getElementById('subject').value, document.getElementById('type').value, document.getElementById('description').value)"
+              >
+                Submit
+              </button>
+              <button
                 type="button"
-                class="btn btn-default"
+                class="btn btn-default bg-primary"
                 data-dismiss="modal"
               >
                 Close

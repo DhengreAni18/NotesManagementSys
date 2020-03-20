@@ -1,12 +1,12 @@
-function upload(subject, description, type, id, by) {
+function upload(subject, type, description) {
   firebase
     .database()
     .ref("users/" + subject)
     .set({
-      Description: description,
       Type: type,
-      userID: id,
-      uploadBy: by,
+      Description: description,
+      //userID: id,
+      //uploadBy: by,
       uploadOn: getservertime()
     });
 }
