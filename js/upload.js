@@ -4,9 +4,9 @@ function upload(subject, type, description) {
     .ref("users/" + subject)
     .set({
       Type: type,
-      Description: description,
+      Description: description
       //userID: id,
       //uploadBy: by,
-      uploadOn: getservertime()
+      //uploadedOn: not working
     });
 }
