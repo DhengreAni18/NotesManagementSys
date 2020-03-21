@@ -1,12 +1,20 @@
+function studentupload() {
+  var name = document.getElementById("subject").value;
+  var file = document.getElementById("myfile").files[0];
+  var storageRef = firebase
+    .storage()
+    .ref()
+    .child(name + "/" + file.name);
 
-function studentupload(){
-    var timestamp = Number(new Date());
-    var storageRef = firebase.storage().ref(timestamp.toString());
-    var file = document.getElementById("myfile").files[0];
-    // var $ = jQuery;
-    // var file_data = $(‘#myfile’).prop(‘files’)[0];
-    // const file = $('#myFile').get(0).files[0]
-    // var fileButton=document.getElementById('file');
-    
-    storageRef.put(file);
+  storageRef
+    .put(file)
+    .then(function(snapshot) {
+      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log("Upload is " + progress + "% done");
+      alert("Uploaded file!");
+      console.log(snapshot);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
 }
