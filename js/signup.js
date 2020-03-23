@@ -24,6 +24,6 @@ function signupp(email, password, name, id, branch, role) {
     })
     .then(function() {
       console.log("added user");
-      window.location.replace("../signnin.html");
+      window.location.replace("../signin.html");
     });
 }

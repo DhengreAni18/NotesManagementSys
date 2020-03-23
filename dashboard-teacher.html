@@ -44,6 +44,7 @@
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
     <script src="./js/firebase.js"></script>
     <script src="./js/upload.js"></script>
+    <script src="./js/logout.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -102,9 +103,9 @@
             </button>
           </li>
         </ul>
-        <div class="my-2 my-lg-2 my-sm-2">Welcome User! &nbsp;</div>
+        <div id="welcome" class="my-2 my-lg-2 my-sm-2"></div>
         <form class="form-inline my-2 my-lg-0">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="logout();" >
             Log Out
           </button>
         </form>
