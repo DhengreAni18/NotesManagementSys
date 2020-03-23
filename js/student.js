@@ -14,7 +14,8 @@ function studentupload() {
       // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
       var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       console.log("Upload is " + progress + "% done");
-      document.getElementById('progresss').innerHTML="Upload is " + progress + "% done";
+      document.getElementById("progresss").innerHTML =
+        "Upload is " + progress + "% done";
       switch (snapshot.state) {
         case firebase.storage.TaskState.PAUSED: // or 'paused'
           console.log("Upload is paused");
@@ -48,4 +49,5 @@ function studentupload() {
   );
 }
 
-document.getElementById('welcome').innerHTML = 'Welcome' + '&nbsp'+ localStorage.getItem("username")+ '&nbsp'+ '&nbsp';
+document.getElementById("welcome").innerHTML =
+  "Welcome" + "&nbsp" + localStorage.getItem("username") + "&nbsp" + "&nbsp";

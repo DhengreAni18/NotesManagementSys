@@ -16,14 +16,16 @@ function login(email, password) {
             console.log(data.key);
           });
           console.log(snapshot.val()[localStorage.getItem("key")].name);
-          localStorage.setItem("username", snapshot.val()[localStorage.getItem("key")].name)
+          localStorage.setItem(
+            "username",
+            snapshot.val()[localStorage.getItem("key")].name
+          );
 
-         if(snapshot.val()[localStorage.getItem("key")].role == "Teacher") {
-           window.location.replace('../dashboard-teacher.html');
-         }
-         else {
-          window.location.replace('../dashboard-student.html');
-         }
+          if (snapshot.val()[localStorage.getItem("key")].role == "Teacher") {
+            window.location.replace("../dashboard-teacher.html");
+          } else {
+            window.location.replace("../dashboard-student.html");
+          }
         });
     })
     .catch(function(error) {
