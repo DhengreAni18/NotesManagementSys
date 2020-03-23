@@ -1,7 +1,7 @@
 function upload(subject, type, description) {
   firebase
     .database()
-    .ref("users/" + subject)
+    .ref("data/" + subject)
     .set({
       Type: type,
       Description: description

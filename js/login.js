@@ -3,7 +3,8 @@ function login(email, password) {
     .auth()
     .signInWithEmailAndPassword(email, password)
     .then(function() {
-      alert("Login Done!");
+      console.log("Login Done!");
+      window.location.replace('../')
     })
     .catch(function(error) {
       // Handle Errors here.
@@ -35,3 +36,5 @@ firebase.auth().onAuthStateChanged(function(user) {
     // ...
   }
 });
+
+
