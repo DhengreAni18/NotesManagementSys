@@ -1,9 +1,9 @@
-function signupp(email, password, name) {
+function signupp(email, password, name,id,branch,role) {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(function() {
-      alert("SignUp Success!!!");
+      console.log("SignUp Success!!!");
     })
     .catch(function(error) {
       // Handle Errors here.
@@ -14,12 +14,12 @@ function signupp(email, password, name) {
 
     firebase
     .database()
-    .ref("users/" + email)
-    .set({
+    .ref("users/")
+    .push({
+      email:email,
       name: name,
-      // Description: description
-      //userID: id,
-      //uploadBy: by,
-      //uploadedOn: not working
+      userID: id,
+      branch:branch,
+      role:role
     });
 }

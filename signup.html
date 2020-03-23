@@ -127,7 +127,13 @@
                     name="signup"
                     id="signup"
                     class="form-submit"
-                    onclick="signupp(document.getElementById('email').value , document.getElementById('pass').value , document.getElementById('name').value);"
+                    onclick="signupp(document.getElementById('email').value ,
+                     document.getElementById('pass').value ,
+                      document.getElementById('name').value,
+                      document.getElementById('your_id').value,
+                      document.getElementById('your_branch').options[document.getElementById('your_branch').selectedIndex].text,
+                      document.getElementById('inputState').options[document.getElementById('inputState').selectedIndex].text
+                      ); "
                     value="Register"
                   />
                 </div>
