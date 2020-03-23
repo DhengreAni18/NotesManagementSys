@@ -4,7 +4,19 @@ function login(email, password) {
     .signInWithEmailAndPassword(email, password)
     .then(function() {
       console.log("Login Done!");
-      window.location.replace('../')
+
+      firebase
+        .database()
+        .ref("users/")
+        .orderByChild("email")
+        .equalTo(email)
+        .on("value", function(snapshot) {
+          snapshot.forEach(function(data) {
+            localStorage.setItem("key", data.key);
+            console.log(data.key);
+          });
+          console.log(snapshot.val()[localStorage.getItem("key")].name);
+        });
     })
     .catch(function(error) {
       // Handle Errors here.
@@ -36,5 +48,3 @@ firebase.auth().onAuthStateChanged(function(user) {
     // ...
   }
 });
-
-

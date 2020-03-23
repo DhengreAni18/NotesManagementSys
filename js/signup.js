@@ -1,4 +1,4 @@
-function signupp(email, password, name,id,branch,role) {
+function signupp(email, password, name, id, branch, role) {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
@@ -12,14 +12,18 @@ function signupp(email, password, name,id,branch,role) {
       // ...
     });
 
-    firebase
+  firebase
     .database()
     .ref("users/")
     .push({
-      email:email,
+      email: email,
       name: name,
       userID: id,
-      branch:branch,
-      role:role
+      branch: branch,
+      role: role
+    })
+    .then(function() {
+      console.log("added user");
+      window.location.replace("../signnin.html");
     });
 }
