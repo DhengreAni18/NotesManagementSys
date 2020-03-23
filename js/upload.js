@@ -2,11 +2,11 @@ function upload(subject, type, description) {
   firebase
     .database()
     .ref("data/" + subject)
-    .set({
+    .push({
       Type: type,
-      Description: description
+      Description: description,
       //userID: id,
       //uploadBy: by,
-      //uploadedOn: not working
+      uploadedOn: moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
     });
 }
