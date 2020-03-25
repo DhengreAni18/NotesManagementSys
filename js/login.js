@@ -26,9 +26,9 @@ function login(email, password) {
           );
 
           if (snapshot.val()[localStorage.getItem("key")].role == "Teacher") {
-            window.location.replace("../dashboard-teacher.html");
+            window.location.replace("./dashboard-teacher.html");
           } else {
-            window.location.replace("../dashboard-student.html");
+            window.location.replace("./dashboard-student.html");
           }
         });
     })
