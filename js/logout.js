@@ -6,6 +6,8 @@ function logout() {
       console.log("Logout Successfull!!");
       localStorage.removeItem("name");
       localStorage.removeItem("username");
+      localStorage.removeItem("userrole");
+      localStorage.removeItem("downloadurl");
       localStorage.removeItem("key");
       window.location.replace("/signin.html");
     })

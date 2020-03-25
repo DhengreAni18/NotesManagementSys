@@ -1,4 +1,4 @@
-function upload(sub,desc) {
+function upload(sub, desc) {
   var name = document.getElementById("subject").value;
   var file = document.getElementById("myfile").files[0];
   var storageRef = firebase
@@ -7,17 +7,6 @@ function upload(sub,desc) {
     .child(name + "/" + file.name);
 
   var uploadTask = storageRef.put(file);
-
-  firebase
-  .database()
-  .ref("data/" + sub)
-  .push({
-    subject:sub,
-    Description: desc,
-    userID: localStorage.getItem("username"),
-    uploadBy: localStorage.getItem("userrole"),
-    uploadedOn: moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
-  });
 
   uploadTask.on(
     firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -55,10 +44,31 @@ function upload(sub,desc) {
       // Upload completed successfully, now we can get the download URL
       uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
         console.log("File available at", downloadURL);
+
+        storageRef.getMetadata().then(function(metadata) {
+          console.log(metadata);
+
+          firebase
+          .database()
+          .ref("data/" + sub)
+          .push({
+            subject: sub,
+            description: desc,
+            userID: localStorage.getItem("username"),
+            uploadBy: localStorage.getItem("userrole"),
+            uploadedOn: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
+            type:metadata.contentType,
+            downloadURL: downloadURL
+          })
+          .then(function() {
+            alert("Uploaded Successfully!");
+          });
+
+        }).catch(function(error) {
+          // Uh-oh, an error occurred!
+        });
+       
       });
     }
   );
 }
-
-document.getElementById("welcome").innerHTML =
-  "Welcome" + "&nbsp" + localStorage.getItem("username") + "&nbsp" + "&nbsp";
