@@ -182,50 +182,29 @@
     <br />
 
     <div class="container">
-      <table class="table table-hover">
-        <thead>
-          <tr>
+      <h1 id="myTable"></h1>
+      <table id="table1" class="table table-centered table-hover table-striped">
+        <thead class="bg-secondary">
+          <tr style="color: white;" >
             <th>Subject Name</th>
             <th>Description</th>
             <th>Type</th>
             <th>UserID</th>
             <th>Uploaded By</th>
             <th>Uploaded On</th>
-            <th>Download</th>
+            <th>Download link</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>CMC</td>
-            <td>lecture 1</td>
-            <td>pptx</td>
-            <td>Jone Doe</td>
-            <td>Teacher</td>
-            <td>2020-03-16 10:32:36</td>
-            <td><a href="">Download</a></td>
+          <tr id="mytr">
+            
           </tr>
-          <tr>
-            <td>NNFL</td>
-            <td>Unit 1</td>
-            <td>pdf</td>
-            <td>Mary Moe</td>
-            <td>Student</td>
-            <td>2020-03-16 11:22:16</td>
-            <td><a href="">Download</a></td>
-          </tr>
-          <tr>
-            <td>SE</td>
-            <td>Requirement Analysis</td>
-            <td>ppt</td>
-            <td>July Dooley</td>
-            <td>Student</td>
-            <td>2020-03-16 12:32:09</td>
-            <td><a href="">Download</a></td>
-          </tr>
+         
         </tbody>
       </table>
     </div>
     <script src="./js/uploadfile.js"></script>
+    <script src="./js/table.js"></script>
     <script>
 
 document.getElementById("welcome").innerHTML =
