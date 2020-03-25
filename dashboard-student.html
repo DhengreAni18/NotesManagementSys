@@ -21,6 +21,8 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
     <!-- Optional theme -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -138,15 +140,15 @@
               <form class="div-container">
                 <form>
                   <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label" style="padding-top: 35px; padding-left:25px">Subject</label>
+                    <label for="subject" class="col-sm-2 col-form-label" style="padding-top: 35px; padding-left:25px">Subject</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputEmail3" placeholder="subject/ topic name">
+                      <input type="text" class="form-control" id="subject" placeholder="subject/ topic name">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label" style="padding-top: 35px; padding-left:28px">Description</label>
+                    <label for="desc" class="col-sm-2 col-form-label" style="padding-top: 35px; padding-left:28px">Description</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputEmail3" placeholder="description">
+                      <input type="text" class="form-control" id="desc" placeholder="description">
                     </div>
                   </div>
                 <label for="myfile"></label>
@@ -158,7 +160,7 @@
             <div class="modal-footer">
               <button
                 class="btn btn-default bg-success"
-                onclick="studentupload()"
+                onclick="upload(document.getElementById('subject').value , document.getElementById('desc').value)"
               >
                 Submit
               </button>

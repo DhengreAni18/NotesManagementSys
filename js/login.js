@@ -20,6 +20,10 @@ function login(email, password) {
             "username",
             snapshot.val()[localStorage.getItem("key")].name
           );
+          localStorage.setItem(
+            "userrole",
+            snapshot.val()[localStorage.getItem("key")].role
+          );
 
           if (snapshot.val()[localStorage.getItem("key")].role == "Teacher") {
             window.location.replace("../dashboard-teacher.html");

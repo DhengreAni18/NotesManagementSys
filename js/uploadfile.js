@@ -1,4 +1,4 @@
-function studentupload() {
+function upload(sub,desc) {
   var name = document.getElementById("subject").value;
   var file = document.getElementById("myfile").files[0];
   var storageRef = firebase
@@ -7,6 +7,17 @@ function studentupload() {
     .child(name + "/" + file.name);
 
   var uploadTask = storageRef.put(file);
+
+  firebase
+  .database()
+  .ref("data/" + sub)
+  .push({
+    subject:sub,
+    Description: desc,
+    userID: localStorage.getItem("username"),
+    uploadBy: localStorage.getItem("userrole"),
+    uploadedOn: moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
+  });
 
   uploadTask.on(
     firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
