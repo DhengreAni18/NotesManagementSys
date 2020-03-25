@@ -23,7 +23,7 @@ function signupp(email, password, name, id, branch, role) {
       role: role
     })
     .then(function() {
-      console.log("added user");
+      alert("User Added");
       window.location.replace("../signin.html");
     });
 }
