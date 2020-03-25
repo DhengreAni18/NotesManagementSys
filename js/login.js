@@ -33,7 +33,7 @@ function login(email, password) {
       //   alert("login error");
       var errorCode = error.code;
       var errorMessage = error.message;
-      //   alert(errorMessage);
+        alert(errorMessage);
       console.log(errorCode);
       console.log(errorMessage);
 
