@@ -45,29 +45,30 @@ function upload(sub, desc) {
       uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
         console.log("File available at", downloadURL);
 
-        storageRef.getMetadata().then(function(metadata) {
-          console.log(metadata);
+        storageRef
+          .getMetadata()
+          .then(function(metadata) {
+            console.log(metadata);
 
-          firebase
-          .database()
-          .ref("data/" + sub)
-          .push({
-            subject: sub,
-            description: desc,
-            userID: localStorage.getItem("username"),
-            uploadBy: localStorage.getItem("userrole"),
-            uploadedOn: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
-            type:metadata.contentType,
-            downloadURL: downloadURL
+            firebase
+              .database()
+              .ref("data/" + sub)
+              .push({
+                subject: sub,
+                description: desc,
+                userID: localStorage.getItem("username"),
+                uploadBy: localStorage.getItem("userrole"),
+                uploadedOn: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
+                type: metadata.contentType,
+                downloadURL: downloadURL
+              })
+              .then(function() {
+                alert("Uploaded Successfully!");
+              });
           })
-          .then(function() {
-            alert("Uploaded Successfully!");
+          .catch(function(error) {
+            // Uh-oh, an error occurred!
           });
-
-        }).catch(function(error) {
-          // Uh-oh, an error occurred!
-        });
-       
       });
     }
   );
