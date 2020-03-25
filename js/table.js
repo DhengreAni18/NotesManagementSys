@@ -44,7 +44,7 @@
         cell6.innerHTML = students[i][j].uploadedOn;
 
         cell7 = row.insertCell(6);
-        cell7.innerHTML = "<a href=students[i][j].downloadURL>Download</a>";
+        cell7.innerHTML = "<a "+ "href="+students[i][j].downloadURL + ">" +"Download" + "</a>";
       }
     }
   });
